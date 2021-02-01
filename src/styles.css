@@ -7,6 +7,9 @@ body{
     margin-top: 20px;
 }
 
+.logo{
+  width: 120px;
+}
 /* Animaciones  */
 .animated {
   -webkit-animation-duration: 1s;
