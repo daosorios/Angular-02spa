@@ -26,6 +26,7 @@ export class HeroesComponent implements OnInit {
     // console.log(this.heroes)
   }
 
+  //para la ruta con el boton ver mas
   verHeroe(id:number){
     this.router.navigate(['/heroe',id]);
   }
