@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 
-import { Interface } from 'readline';
 
 @Injectable()
 export class HeroesService {
