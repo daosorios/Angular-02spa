@@ -11,12 +11,12 @@ import { HeroesService } from 'src/app/service/heroes.service';
 export class BuscarComponent implements OnInit {
 
   @Input() buscar:any[]= [];
-  @Input() index:number;
+ 
   termino:string;
 
   constructor(private activatedRoute:ActivatedRoute,
-              private heroesService: HeroesService,
-              private router:Router ) { }
+              private heroesService: HeroesService
+              ) { }
 
   ngOnInit(){
     this.activatedRoute.params.subscribe(params => {
@@ -27,8 +27,6 @@ export class BuscarComponent implements OnInit {
     });
   }
 
-  verHeroe(){
-    this.router.navigate(['/heroe',this.index]);
-  }
+
 
 }

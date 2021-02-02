@@ -25,9 +25,9 @@ export class HeroeTarjetaComponent {
 
   
   verHeroe(){
-    //this.router.navigate(['/heroe',this.index]);
+    this.router.navigate(['/heroe',this.index]);
 
     //vamos a emitir el valor para esto debemos en el html hacerlo escuchar
-    this.heroeselec.emit( this.index );
+    //this.heroeselec.emit( this.index );
   }
 }

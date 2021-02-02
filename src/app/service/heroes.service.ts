@@ -78,13 +78,15 @@ export class HeroesService {
 
     //recorrer los heroes y en cada iteracion queda en heroe
     //el nombre debe estar en minuscula
-    for( let heroe of this.heroes){
+    for( let i =0 ; i < this.heroes.length; i ++){
+      let heroe= this.heroes[i];
 
       let nombre = heroe.nombre.toLowerCase();
 
       //si el nombre se encuentra el heroe con el index entonces lo agrega al arreglo temporal
       if(nombre.indexOf(termino) >= 0){
-          heroeArr.push(heroe)
+        heroe.idx= i;
+        heroeArr.push(heroe)
       }
     }
     
@@ -103,7 +105,7 @@ export interface Heroe{
   img: string;
   aparicion: string;
   casa: string;
-
+  idx?: number;
 };
 
 
