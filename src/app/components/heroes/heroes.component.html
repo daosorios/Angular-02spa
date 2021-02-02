@@ -5,6 +5,6 @@
 <div class="row row-cols-1 row-cols-md-3 g-4 animated fast fadeIn">
 
 <!--componenete especializado le mano la propiedad que estoy recorriendo -->
-<app-heroe-tarjeta [heroe]="heroe" [index]=i  *ngFor="let heroe of heroes, let i =index"></app-heroe-tarjeta> 
+<app-heroe-tarjeta (heroeselec)="verHeroe($event)" [heroe]="heroe" [index]=i  *ngFor="let heroe of heroes, let i =index"></app-heroe-tarjeta> 
 
 </div>

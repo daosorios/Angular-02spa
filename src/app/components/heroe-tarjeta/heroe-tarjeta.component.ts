@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input , Output, EventEmitter} from '@angular/core';
 import { Router } from '@angular/router'
 
 @Component({
@@ -11,11 +11,23 @@ export class HeroeTarjetaComponent {
   @Input() heroe:any={};
   @Input() index:number;
 
-  constructor(private router:Router) { }
+//evento que quiero que el padre este escuchando y que tipo de valor emite 
+  @Output() heroeselec: EventEmitter<number>
+
+
+  constructor(private router:Router) { 
+
+    //inicializamos el eventemiter 
+    this.heroeselec= new EventEmitter();
+
+  }
 
 
   
   verHeroe(){
-    this.router.navigate(['/heroe',this.index]);
+    //this.router.navigate(['/heroe',this.index]);
+
+    //vamos a emitir el valor para esto debemos en el html hacerlo escuchar
+    this.heroeselec.emit( this.index );
   }
 }
