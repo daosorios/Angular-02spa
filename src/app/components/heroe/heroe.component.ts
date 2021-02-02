@@ -16,10 +16,12 @@ export class HeroeComponent {
               private _heroeService:HeroesService
               ) {
     //obtener el parametro que viene por la url 
+    
     this.activatedRouter.params.subscribe(params => {
       
       this.heroe=this._heroeService.getHeroe(params['id']);
       console.log(this.heroe)
+      
     })
    }
 

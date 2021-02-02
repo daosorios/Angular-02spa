@@ -70,6 +70,28 @@ export class HeroesService {
     return this.heroes[idx]
   }
 
+  buscarHeroe( termino:string ){
+
+    //se crea una variable let de tipo Heroe temporal y el termino debe cambiar a minuscula
+    let heroeArr:Heroe[] = [];
+    termino =termino.toLowerCase();
+
+    //recorrer los heroes y en cada iteracion queda en heroe
+    //el nombre debe estar en minuscula
+    for( let heroe of this.heroes){
+
+      let nombre = heroe.nombre.toLowerCase();
+
+      //si el nombre se encuentra el heroe con el index entonces lo agrega al arreglo temporal
+      if(nombre.indexOf(termino) >= 0){
+          heroeArr.push(heroe)
+      }
+    }
+    
+
+    return heroeArr;
+
+  }
 
   
 }
