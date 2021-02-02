@@ -1,29 +1,10 @@
 <h1>Heroes <small>Marvel y Dc </small></h1>
 
 <hr>
-
+<!-- *ngFor="let heroe of heroes, let i =index" -->
 <div class="row row-cols-1 row-cols-md-3 g-4 animated fast fadeIn">
-    <div class="col" *ngFor="let heroe of heroes, let i =index">
-      <!-- recorrer con el ngfor el arreglo de los heroes  -->
-      <div class="card h-100" >
-        <img [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre" >
-        <div class="card-body ">
-          <h5 class="card-title">{{heroe.nombre}}</h5>
-          <p class="card-text">{{heroe.bio}}</p>
-          <div class="d-grid">
 
-            <!-- redireccionar a otra ruta con  el boton o con el ancla -->
-            <button (click)="verHeroe(i)"
-             type="button" class="btn btn-outline-primary ">Ver más...</button>
+<!--componenete especializado le mano la propiedad que estoy recorriendo -->
+<app-heroe-tarjeta [heroe]="heroe" [index]=i  *ngFor="let heroe of heroes, let i =index"></app-heroe-tarjeta> 
 
-
-            <!-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary ">Ver más link...</a> -->
-          </div>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">{{heroe.aparicion}}</small>
-        </div>
-      </div>
-    </div>
-   
 </div>
